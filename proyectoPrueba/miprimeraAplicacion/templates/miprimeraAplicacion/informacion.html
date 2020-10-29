@@ -1,0 +1,29 @@
+{% extends 'miprimeraAplicacion/inicio.html' %}
+{%block contenido%}
+    <h1>TABLA</h1>
+    <h1>{{MISDATOS}}</h1>
+    <body>
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+              <tr>
+                  <th scope="col">Numero de Parte</th>
+                  <th scope="col">Color</th>
+                  <th scope="col">Temperatura</th>
+                  <th scope="col">Inflamacion</th>
+              </tr>
+             </thead>
+             <tbody>
+                   {% for i in misdatos %}       
+         <tr>
+            <th scope="row">{{i.partP}}</th>
+            <td>{{i.temperatura}}</td>
+            <td>{{i.color}}</td>
+            <td>{{i.inflamacion}}</td>
+           </tr>
+                {% endfor %}
+              <a href="{% url 'informacion' %}"></a>
+              <p style="color: rgb(255, 0, 179);">Datos recolectados</p>
+         </tbody>
+        </table>    
+    </body>    
+{%endblock%}
